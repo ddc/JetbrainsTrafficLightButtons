@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/ddc/JetbrainsTrafficLightButtons/refs/heads/master/assets/ddcSoftwaresThemesIcon.svg" alt="ddcSoftwaresThemesIcon" width="150">
+  <img src="https://raw.githubusercontent.com/ddc/JetbrainsTrafficLightButtons/refs/heads/main/assets/ddcSoftwaresThemesIcon.svg" alt="ddcSoftwaresThemesIcon" width="150">
   <br>
   Traffic Light Buttons
 </h1>
