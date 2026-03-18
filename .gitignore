@@ -1,0 +1,9 @@
+.idea/
+.gradle/
+.intellijPlatform/
+.kotlin/
+.whats_new.html
+build/
+gradlew.bat
+changes.md
+/docs/

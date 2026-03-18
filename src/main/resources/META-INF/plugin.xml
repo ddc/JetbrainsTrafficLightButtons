@@ -1,0 +1,35 @@
+<idea-plugin require-restart="true">
+    <id>com.ddc.trafficlightbuttons</id>
+    <name>Traffic Light Buttons</name>
+    <vendor email="daniel@ddcsoftwares.com" url="https://github.com/ddc/JetbrainsTrafficLightButtons">DDC Softwares</vendor>
+    <description><![CDATA[
+        <a href="https://github.com/ddc/JetbrainsTrafficLightButtons">GitHub</a> |
+        <a href="https://github.com/sponsors/ddc">GitHub Sponsors</a> |
+        <a href="https://ko-fi.com/ddcsta">Ko-fi</a> |
+        <a href="https://www.paypal.com/ncp/payment/6G9Z78QHUD4RJ">PayPal</a>
+        <br/><br/>
+        Replaces Close/Minimize/Maximize window buttons with macOS-style traffic light buttons for all JetBrains IDEs.
+        <br/><br/>
+        <b>Features</b>
+        <ul>
+            <li>macOS-style traffic light buttons (red/yellow/green)</li>
+            <li>Hover icons (X, minus, fullscreen arrows)</li>
+            <li>Configurable button placement (left or right)</li>
+        </ul>
+        <br/>
+        <b>Settings</b><br/>
+        Settings &gt; Appearance &amp; Behavior &gt; Traffic Light Buttons
+    ]]></description>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable
+            parentId="appearance"
+            instance="com.ddc.trafficlightbuttons.settings.TrafficLightButtonsConfigurable"
+            id="com.ddc.trafficlightbuttons.settings"
+            displayName="Traffic Light Buttons"/>
+        <applicationService
+            serviceImplementation="com.ddc.trafficlightbuttons.settings.TrafficLightButtonsSettings"/>
+        <postStartupActivity
+            implementation="com.ddc.trafficlightbuttons.listeners.TrafficLightButtonsInitializer"/>
+    </extensions>
+</idea-plugin>
