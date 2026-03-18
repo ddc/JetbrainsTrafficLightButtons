@@ -107,7 +107,7 @@ cleanup_build() {
 write_gradle_properties
 update_changelog
 format_kotlin
-#verify_plugin
+verify_plugin
 build_plugin
 cleanup_build
 
