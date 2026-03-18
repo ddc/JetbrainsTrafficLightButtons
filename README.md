@@ -23,7 +23,6 @@
 <p align="center">📦 <b><a href="https://plugins.jetbrains.com/plugin/30756-traffic-light-buttons">Install from JetBrains Marketplace</a></b> 📦 </p>
 
 
-
 # Table of Contents
 
 - [Screenshot](#screenshot)
