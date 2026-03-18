@@ -15,7 +15,7 @@
     <br>
     <a href="https://github.com/ddc/JetbrainsTrafficLightButtons/issues"><img src="https://img.shields.io/github/issues/ddc/JetbrainsTrafficLightButtons?style=plastic&logo=github&logoColor=white" alt="issues"/></a>
     <a href="https://github.com/ddc/JetbrainsTrafficLightButtons/actions/workflows/workflow.yml"><img src="https://img.shields.io/github/actions/workflow/status/ddc/JetbrainsTrafficLightButtons/workflow.yml?style=plastic&logo=github&logoColor=white&label=CI%2FCD%20Pipeline" alt="CI/CD Pipeline"/></a>
-    <a href="https://actions-badge.atrox.dev/ddc/JetbrainsTrafficLightButtons/goto?ref=master"><img src="https://img.shields.io/endpoint.svg?url=https%3A//actions-badge.atrox.dev/ddc/JetbrainsTrafficLightButtons/badge?ref=master&label=build&logo=github&style=plastic" alt="Build Status"/></a>
+    <a href="https://actions-badge.atrox.dev/ddc/JetbrainsTrafficLightButtons/goto?ref=main"><img src="https://img.shields.io/endpoint.svg?url=https%3A//actions-badge.atrox.dev/ddc/JetbrainsTrafficLightButtons/badge?ref=main&label=build&logo=github&style=plastic" alt="Build Status"/></a>
 </p>
 
 <p align="center">Replaces Close/Minimize/Maximize window buttons with macOS-style traffic light buttons for all JetBrains IDEs</p>
