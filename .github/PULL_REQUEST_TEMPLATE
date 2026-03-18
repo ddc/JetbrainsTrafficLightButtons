@@ -1,0 +1,20 @@
+## Summary
+<!-- Brief description of what this PR does and why -->
+
+## Changes Made
+<!-- List the key changes -->
+
+## Type of Change
+- [ ] Button Icons (SVGs)
+- [ ] Button Placement
+- [ ] Settings
+- [ ] Code (Kotlin)
+- [ ] Build script or CI/CD
+- [ ] Documentation
+- [ ] Other
+
+## Testing
+- [ ] Installed plugin in IDE and verified changes
+
+## Reviewer
+- [ ] I understand that by approving this PR, I share responsibility for these changes
