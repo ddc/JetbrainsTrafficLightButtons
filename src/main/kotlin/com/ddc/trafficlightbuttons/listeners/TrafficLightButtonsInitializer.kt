@@ -38,8 +38,9 @@ class TrafficLightButtonsInitializer : ProjectActivity {
 
         val settings = TrafficLightButtonsSettings.getInstance()
         val placement = settings.buttonPlacement
+        val buttonOrder = settings.buttonOrder
 
-        LOG.info("Traffic Light Buttons: initializing with placement=$placement")
+        LOG.info("Traffic Light Buttons: initializing with placement=$placement, order=$buttonOrder")
 
         val closeIcons = loadButtonIcons("close")
         val minimizeIcons = loadButtonIcons("minimize")
@@ -52,7 +53,7 @@ class TrafficLightButtonsInitializer : ProjectActivity {
                 try {
                     for (window in Window.getWindows()) {
                         if (window is JFrame) {
-                            enforce(window, placement, closeIcons, minimizeIcons, maximizeIcons)
+                            enforce(window, placement, buttonOrder, closeIcons, minimizeIcons, maximizeIcons)
                         }
                     }
                 } catch (e: Exception) {
@@ -74,12 +75,13 @@ class TrafficLightButtonsInitializer : ProjectActivity {
     private fun enforce(
         frame: JFrame,
         placement: String,
+        buttonOrder: String,
         closeIcons: ButtonIcons,
         minimizeIcons: ButtonIcons,
         maximizeIcons: ButtonIcons,
     ) {
         // Enforce button placement via WindowButtonsConfiguration
-        enforceButtonPosition(placement)
+        enforceButtonPosition(placement, buttonOrder)
 
         val allButtons = mutableListOf<JButton>()
         findAllWindowButtons(frame, allButtons)
@@ -201,8 +203,12 @@ class TrafficLightButtonsInitializer : ProjectActivity {
         }
     }
 
-    private fun enforceButtonPosition(placement: String) {
+    private fun enforceButtonPosition(
+        placement: String,
+        buttonOrder: String,
+    ) {
         val wantRight = placement == "RIGHT"
+        val useMacOrder = buttonOrder == "MACOS"
         try {
             val stateClass =
                 Class.forName(
@@ -240,14 +246,18 @@ class TrafficLightButtonsInitializer : ProjectActivity {
                 val close = windowButtonClass.getField("CLOSE").get(null)
                 val minimize = windowButtonClass.getField("MINIMIZE").get(null)
                 val maximize = windowButtonClass.getField("MAXIMIZE").get(null)
-                // macOS order for LEFT, OS/IDE default for RIGHT
-                val buttonOrder =
-                    if (wantRight) {
-                        listOf(minimize, maximize, close)
-                    } else {
+                // LEFT: Close, Minimize, Maximize (always)
+                // RIGHT + IDE Default: Minimize, Maximize, Close
+                // RIGHT + macOS Style: Maximize, Minimize, Close
+                val desiredOrder =
+                    if (!wantRight) {
                         listOf(close, minimize, maximize)
+                    } else if (useMacOrder) {
+                        listOf(maximize, minimize, close)
+                    } else {
+                        listOf(minimize, maximize, close)
                     }
-                stateClass.getField("buttons").set(desiredState, buttonOrder)
+                stateClass.getField("buttons").set(desiredState, desiredOrder)
 
                 // Check if button order needs fixing by looking at TitleButtonsPanel children
                 val content = buttonPanesObj.javaClass.getMethod("getContent")
@@ -258,7 +268,14 @@ class TrafficLightButtonsInitializer : ProjectActivity {
                     val firstButton = titlePanel.getComponent(0)
                     if (firstButton is JButton) {
                         val firstTooltip = firstButton.toolTipText?.lowercase() ?: ""
-                        val expectedFirst = if (wantRight) "minimize" else "close"
+                        val expectedFirst =
+                            if (!wantRight) {
+                                "close"
+                            } else if (useMacOrder) {
+                                "maximize"
+                            } else {
+                                "minimize"
+                            }
                         needsOrderUpdate = !firstTooltip.contains(expectedFirst)
                     }
                 }

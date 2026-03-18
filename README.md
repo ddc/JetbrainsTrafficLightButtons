@@ -41,11 +41,11 @@
 
 # Features
 
+- Linux only (macOS already has native traffic lights; Windows support planned for a future release)
 - macOS-style traffic light buttons (red/yellow/green)
 - Four button states: active, hover (with action icons), pressed, and inactive (gray)
 - Configurable button placement (left or right side of the title bar)
 - Compatible with all JetBrains IDEs (2025.3.3+)
-- Works alongside icon pack plugins (e.g., Atom Material Icons)
 
 
 # Installation
@@ -62,6 +62,9 @@
 `Settings > Appearance & Behavior > Traffic Light Buttons`
 
 - **Button Placement** — Left or Right (default: Right)
+- **Button Order** — IDE Default or macOS Style (only available for Right placement)
+  - **IDE Default**: Minimize, Maximize, Close
+  - **macOS Style**: Maximize, Minimize, Close
 
 
 # Build
