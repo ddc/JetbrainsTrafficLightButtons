@@ -26,6 +26,12 @@ WHATS_NEW=$(cat <<'EOF'
 EOF
 )
 # ============================================================================
+RUN_VERIFY=false
+for arg in "$@"; do
+    case "$arg" in
+        -v|--verify) RUN_VERIFY=true ;;
+    esac
+done
 pushd "$(dirname "${BASH_SOURCE[0]}")" > /dev/null
 export JAVA_HOME
 # ============================================================================
@@ -88,6 +94,7 @@ verify_plugin() {
 
 build_plugin() {
     log_action "Building plugin..."
+    rm -f "build/${OUTPUT_FILENAME}"
     ./gradlew buildPlugin -q
 }
 
@@ -107,7 +114,7 @@ cleanup_build() {
 write_gradle_properties
 update_changelog
 format_kotlin
-verify_plugin
+[[ "$RUN_VERIFY" == true ]] && verify_plugin
 build_plugin
 cleanup_build
 
