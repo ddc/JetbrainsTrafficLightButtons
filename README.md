@@ -20,6 +20,9 @@
 
 <p align="center">Replaces Close/Minimize/Maximize window buttons with macOS-style traffic light buttons for all JetBrains IDEs</p>
 
+<p align="center">📦 <b><a href="https://plugins.jetbrains.com/plugin/30756-traffic-light-buttons">Install from JetBrains Marketplace</a></b> 📦 </p>
+
+
 
 # Table of Contents
 
@@ -41,7 +44,7 @@
 
 # Features
 
-- Linux only (macOS already has native traffic lights; Windows support planned for a future release)
+- LINUX ONLY (macOS already has native traffic lights; Windows support planned for a future release)
 - macOS-style traffic light buttons (red/yellow/green)
 - Four button states: active, hover (with action icons), pressed, and inactive (gray)
 - Configurable button placement (left or right side of the title bar)
@@ -49,6 +52,13 @@
 
 
 # Installation
+
+## From Marketplace
+
+1. In your JetBrains IDE, go to **Settings > Plugins > Marketplace**
+2. Search for **Traffic Light Buttons**
+3. Click **Install** and restart the IDE
+
 
 ## From Plugin ZIP
 
