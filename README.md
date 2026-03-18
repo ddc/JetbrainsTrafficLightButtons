@@ -10,7 +10,7 @@
     <a href="https://ko-fi.com/ddc"><img src="https://img.shields.io/badge/Ko--fi-ddc-FF5E5B?style=plastic&logo=kofi&logoColor=white&color=brightgreen" alt="Ko-fi"/></a>
     <a href="https://www.paypal.com/ncp/payment/6G9Z78QHUD4RJ"><img src="https://img.shields.io/badge/Donate-PayPal-brightgreen.svg?style=plastic&logo=paypal&logoColor=white" alt="Donate"/></a>
     <br>
-    <a href="https://github.com/ddc/JetbrainsTrafficLightButtons/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=plastic&logo=apache&logoColor=white" alt="License: Apache 2.0"/></a>
+    <a href="https://github.com/ddc/JetbrainsTrafficLightButtons/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=plastic&logo=apache&logoColor=white" alt="License: Apache 2.0"/></a>
     <a href="https://github.com/ddc/JetbrainsTrafficLightButtons/releases/latest"><img src="https://img.shields.io/github/v/release/ddc/JetbrainsTrafficLightButtons?style=plastic&logo=github&logoColor=white" alt="Release"/></a>
     <br>
     <a href="https://github.com/ddc/JetbrainsTrafficLightButtons/issues"><img src="https://img.shields.io/github/issues/ddc/JetbrainsTrafficLightButtons?style=plastic&logo=github&logoColor=white" alt="issues"/></a>
