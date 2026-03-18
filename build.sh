@@ -3,6 +3,8 @@
 # Automated script to build the plugin and register changes on the changelog file
 # DDC Softwares (daniel@ddcsoftwares.com)
 # https://github.com/ddc/JetbrainsTrafficLightButtons
+# Usage: ./build.sh [-v|--verify]
+#   -v, --verify  Run plugin verification before building
 # ============================================================================
 set -euo pipefail
 

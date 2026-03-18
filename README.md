@@ -10,6 +10,7 @@
     <a href="https://ko-fi.com/ddc"><img src="https://img.shields.io/badge/Ko--fi-ddc-FF5E5B?style=plastic&logo=kofi&logoColor=white&color=brightgreen" alt="Ko-fi"/></a>
     <a href="https://www.paypal.com/ncp/payment/6G9Z78QHUD4RJ"><img src="https://img.shields.io/badge/Donate-PayPal-brightgreen.svg?style=plastic&logo=paypal&logoColor=white" alt="Donate"/></a>
     <br>
+    <a href="https://plugins.jetbrains.com/plugin/30756-traffic-light-buttons"><img src="https://img.shields.io/jetbrains/plugin/d/30756?style=plastic&logo=jetbrains&logoColor=white" alt="Marketplace Downloads"/></a>
     <a href="https://github.com/ddc/JetbrainsTrafficLightButtons/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=plastic&logo=apache&logoColor=white" alt="License: Apache 2.0"/></a>
     <a href="https://github.com/ddc/JetbrainsTrafficLightButtons/releases/latest"><img src="https://img.shields.io/github/v/release/ddc/JetbrainsTrafficLightButtons?style=plastic&logo=github&logoColor=white" alt="Release"/></a>
     <br>
@@ -22,17 +23,18 @@
 
 <p align="center">📦 <b><a href="https://plugins.jetbrains.com/plugin/30756-traffic-light-buttons">Install from JetBrains Marketplace</a></b> 📦 </p>
 
-
 # Table of Contents
 
 - [Screenshot](#screenshot)
 - [Features](#features)
 - [Installation](#installation)
+    - [From Marketplace](#from-marketplace)
+    - [From Plugin ZIP](#from-plugin-zip)
+- [Getting Started](#getting-started)
 - [Settings](#settings)
 - [Build](#build)
 - [License](#license)
 - [Support](#support)
-
 
 # Screenshot
 
@@ -40,15 +42,16 @@
   <img src="assets/examples.png" alt="Left placement">
 </p>
 
-
 # Features
 
-- LINUX ONLY (macOS already has native traffic lights; Windows support planned for a future release)
-- macOS-style traffic light buttons (red/yellow/green)
-- Four button states: active, hover (with action icons), pressed, and inactive (gray)
-- Configurable button placement (left or right side of the title bar)
-- Compatible with all JetBrains IDEs (2025.3.3+)
-
+| Feature               | Description                                                                     |
+|-----------------------|---------------------------------------------------------------------------------|
+| Traffic Light Buttons | macOS-style colored circles (red/yellow/green) replacing default window buttons |
+| Button States         | Four states: active, hover (with action icons), pressed, and inactive (gray)    |
+| Button Placement      | Configurable left or right side of the title bar                                |
+| Button Order          | IDE Default or macOS Style order (right placement only)                         |
+| Platform              | Linux only (macOS already has native traffic lights; Windows support planned)   |
+| Compatibility         | All JetBrains IDEs (2025.3.3+)                                                  |
 
 # Installation
 
@@ -58,13 +61,24 @@
 2. Search for **Traffic Light Buttons**
 3. Click **Install** and restart the IDE
 
-
 ## From Plugin ZIP
 
-1. Download the latest `TrafficLightButtons-*.zip` from [Releases](https://github.com/ddc/JetbrainsTrafficLightButtons/releases)
+1. Download the latest
+   `TrafficLightButtons-*.zip` from [Releases](https://github.com/ddc/JetbrainsTrafficLightButtons/releases)
 2. Go to **Settings > Plugins > Install Plugin from Disk...**
 3. Select the downloaded `.zip` file and restart the IDE
 
+# Getting Started
+
+After install and restart, the traffic light buttons are applied automatically with the default settings (right placement, IDE default order).
+To customize, go to:
+
+| Setting              | How to change                                                                                 |
+|----------------------|-----------------------------------------------------------------------------------------------|
+| **Button Placement** | **Settings > Appearance & Behavior > Traffic Light Buttons** > select LEFT/RIGHT              |
+| **Button Order**     | **Settings > Appearance & Behavior > Traffic Light Buttons** > select IDE Default/macOS Style |
+
+> **Note:** Changes require an IDE restart to take effect. A restart dialog will appear after applying.
 
 # Settings
 
@@ -72,20 +86,25 @@
 
 - **Button Placement** — Left or Right (default: Right)
 - **Button Order** — IDE Default or macOS Style (only available for Right placement)
-  - **IDE Default**: Minimize, Maximize, Close
-  - **macOS Style**: Maximize, Minimize, Close
-
+    - **IDE Default**: Minimize, Maximize, Close
+    - **macOS Style**: Maximize, Minimize, Close
 
 # Build
 
+Requires JDK 21.
+
 ```bash
-./build.sh
+./build.sh                  # build only
+./build.sh [-v|--verify]    # build with plugin verification
 ```
+
+The script formats Kotlin sources (if `ktlint` is available) and builds `TrafficLightButtons-<version>.zip` inside the
+`build/` directory.
+Plugin settings and variables are configured at the top of `build.sh`.
 
 # License
 
 This project is licensed under the [Apache 2.0 License](LICENSE).
-
 
 # Support
 
