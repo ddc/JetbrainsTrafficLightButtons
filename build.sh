@@ -22,8 +22,7 @@ OUTPUT_FILENAME="TrafficLightButtons-${PLUGIN_VERSION}.zip"
 # ============================================================================
 WHATS_NEW=$(cat <<'EOF'
 <ul>
-<li>Traffic light buttons (red/yellow/green)</li>
-<li>Configurable button placement (left or right)</li>
+<li>Fixed documentation and build script</li>
 </ul>
 EOF
 )
