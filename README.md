@@ -18,7 +18,7 @@
     <a href="https://actions-badge.atrox.dev/ddc/JetbrainsTrafficLightButtons/goto?ref=main"><img src="https://img.shields.io/endpoint.svg?url=https%3A//actions-badge.atrox.dev/ddc/JetbrainsTrafficLightButtons/badge?ref=main&label=build&logo=github&style=plastic" alt="Build Status"/></a>
 </p>
 
-<p align="center">Replaces Close/Minimize/Maximize window buttons with macOS-style traffic light buttons for all JetBrains IDEs</p>
+<p align="center">Replaces Close/Minimize/Maximize window buttons with macOS-style traffic light buttons for all JetBrains IDEs (Linux only)</p>
 
 <p align="center">📦 <b><a href="https://plugins.jetbrains.com/plugin/30756-traffic-light-buttons">Install from JetBrains Marketplace</a></b> 📦 </p>
 
