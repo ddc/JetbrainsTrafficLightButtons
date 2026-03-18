@@ -11,6 +11,7 @@ import com.intellij.openapi.components.Storage
 class TrafficLightButtonsSettings : PersistentStateComponent<TrafficLightButtonsSettings.State> {
     data class State(
         var buttonPlacement: String = "RIGHT",
+        var buttonOrder: String = "IDE_DEFAULT",
     )
 
     private var state = State()
@@ -25,6 +26,12 @@ class TrafficLightButtonsSettings : PersistentStateComponent<TrafficLightButtons
         get() = state.buttonPlacement
         set(value) {
             state.buttonPlacement = value
+        }
+
+    var buttonOrder: String
+        get() = state.buttonOrder
+        set(value) {
+            state.buttonOrder = value
         }
 
     companion object {
