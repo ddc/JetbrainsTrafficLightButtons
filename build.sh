@@ -11,7 +11,7 @@ set -euo pipefail
 # ============================================================================
 # Variables
 # ============================================================================
-PLUGIN_VERSION="1.0.1"
+PLUGIN_VERSION="1.0.2"
 GRADLE_VERSION="9.4.0"
 KOTLIN_VERSION="2.1.0"
 INTELLIJ_PLATFORM_VERSION="2.12.0"
